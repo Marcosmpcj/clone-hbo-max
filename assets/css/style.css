@@ -1,0 +1,331 @@
+@import url("global.css");
+
+.header {
+    transform: translateY(7vh);
+    display: flex;
+    flex-direction: column;
+    padding: 6rem 0 18rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+
+    background: linear-gradient(-45deg, #56125b, #0f0f10, #271e6e);
+    background-size: 400% 400%;
+    animation: header__btn 10s ease infinite alternate both;
+}
+
+@keyframes header__btn {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 50% 50%;
+    }
+}
+
+.header::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(0deg,
+            #020228,
+            transparent);
+
+    pointer-events: none;
+}
+
+.header__channel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.header__title {
+    font-size: 32px;
+    text-transform: uppercase;
+    margin: 3rem 0;
+}
+
+.header__title span {
+    font-weight: bold;
+    font-size: 48px;
+}
+
+.header__divider {
+    width: 700px;
+    height: 5px;
+    background: var(--divider-bg-color);
+}
+
+.header__offer {
+    margin-top: 3rem;
+    font-size: 20px;
+}
+
+.header__offer span {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.header__offer p:nth-of-type(2) {
+    font-weight: 400;
+    font-size: 16px;
+    filter: brightness(5);
+}
+
+.offer__btn {
+    animation: wiggle 2.2s linear infinite;
+}
+
+@keyframes wiggle {
+    0% {
+        transform: rotate(0);
+    }
+
+    15% {
+        transform: rotate(-15deg);
+    }
+
+    20% {
+        transform: rotate(10deg);
+    }
+
+    25% {
+        transform: rotate(-10deg);
+    }
+
+    30% {
+        transform: rotate(10deg);
+    }
+
+    35% {
+        transform: rotate(-10deg);
+    }
+
+    40%,
+    100% {
+        transform: rotate(0);
+    }
+}
+
+.subscription {
+    height: auto;
+    background: var(--primary-color);
+    color: white;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    text-align: center;
+    background: url("../img/background-movies-series.png") no-repeat;
+    background-size: contain;
+    background-position: center;
+    position: relative;
+    z-index: 10;
+}
+
+
+.subscription h2 {
+    font-weight: 700;
+    font-size: 32px;
+}
+
+#subscription__plans {
+    scroll-margin-top: 22vh;
+}
+
+.subscription__plans {
+    margin-top: 3rem;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    perspective: 2000px;
+    /* aplica-se no pai */
+    perspective-origin: top;
+}
+
+.subscription__card {
+    height: 100%;
+    padding: 40px 60px;
+    background: var(--card-bg-color);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    transition: transform 1s ease-in-out;
+}
+
+.subscription__plans:has(.subscription__card:nth-child(1):hover) .subscription__card:nth-child(2) {
+    transform: rotateY(-40deg);
+}
+
+.subscription__plans:has(.subscription__card:nth-child(2):hover) .subscription__card:nth-child(1) {
+    transform: rotateY(40deg);
+}
+
+
+.subscription__plan {
+    display: flex;
+    justify-content: space-between;
+    font-size: 24px;
+
+}
+
+.subscription__plan p span {
+    color: var(--secondary-color);
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.subscription__plan p {
+    color: white;
+    font-size: 16px;
+    font-weight: lighter;
+}
+
+.subscription__items ul {
+    list-style: none;
+}
+
+.subscription__items li {
+    text-align: left;
+    margin: 16px 0;
+    font-size: 20px;
+}
+
+.subscription__items li::marker {
+    content: "+ ";
+    font-size: 2rem;
+}
+
+.btn__plans {
+    background: linear-gradient(45deg,
+            #9b34ef, #490cb0, #5516ba, transparent 50%);
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
+    text-transform: uppercase;
+    padding: 16px 0px;
+    letter-spacing: 4px;
+    background-size: 400% 400%;
+    border-radius: 28px;
+    border: none;
+    outline: 2px solid transparent;
+    cursor: pointer;
+    transition: transform 1s, outline 1s, background-position 1s ease-in-out;
+}
+
+.btn__plans:hover {
+    cursor: pointer;
+    transform: scale(1.05) scaleZ(1.1);
+    outline: 2px solid #ff00e5;
+    /* background: transparent; */
+    background-position: 100% 0%;
+}
+
+.contents {
+    width: 100%;
+    margin: 6rem 0;
+}
+
+.contents h1 {
+    font-weight: 500;
+    font-size: 2rem;
+    margin: 2rem 0 5rem 0;
+}
+
+.contents__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.contents__card {
+    border-radius: 16px;
+    cursor: pointer;
+    outline: 2px solid transparent;
+
+    position: relative;
+    overflow: hidden;
+    transition: img 1s, transform 1s, outline 1s;
+}
+
+.image-default,
+.image-hover {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    outline: 2px solid transparent;
+}
+
+.image-hover {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.contents__card:hover {
+    transform: scale(1.05);
+    outline: 2px solid var(--primary-color);
+}
+
+.image-hover:hover {
+    opacity: 1;
+}
+
+/* Media Queries */
+
+@media screen and (max-width:1078px) {
+    .container{
+        max-width: 768px;
+        height: auto;
+    }
+    .subscription__plans {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        gap: 2rem;
+    }
+
+    .subscription__card {
+        max-width: 600px;
+        min-height: 650px;
+        margin-top: 0;
+    }
+
+    .contents {
+        width: 100%;
+        margin: 4rem 0;
+    }
+
+    .contents__grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        place-items: center;
+        gap: 1.5rem;
+    }
+
+}
+@media screen and (max-width:768px){
+    .header__divider{
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto ;
+    }
+}

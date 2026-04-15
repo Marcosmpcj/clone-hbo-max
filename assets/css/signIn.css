@@ -1,0 +1,113 @@
+@import url("global.css");
+
+.content {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--primary-color);
+    background: url("../img/background-movies-series.png") no-repeat;
+    background-size: 110% 110%;
+    background-position: center;
+
+}
+
+.main {
+    transform: translateY(7vh);
+    width: 100%;
+    min-height: 70vh;
+    padding-top: 7vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Formulario */
+.login {
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    padding: 40px;
+    margin-bottom: 70px;
+    border-radius: 8px;
+    background: var(--form-bg-color);
+    color: white;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: left;
+    font-size: 1.15rem;
+
+}
+
+.login__title {
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.45rem;
+    letter-spacing: 2px;
+}
+
+.login__label{
+    text-align: left;
+}
+
+.login input {
+    margin-top: 32px;
+    padding: 20px 16px;
+    border-radius: 8px;
+    border: var(--form-field-border);
+    background: var(--form-field-bg-color);
+    color: white;
+    font-size: 1.25rem;
+    /* outline: var(--form-field-border); */
+}
+
+.login input::placeholder {
+    color: white;
+    font-size: 1.15rem;
+
+}
+
+.login input:focus {
+    outline: 1.5px solid white;
+    /* outline-offset: 2px; */
+}
+
+.login__actions {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 2rem;
+}
+
+.login__forgetPassword {
+    color: var(--link-color);
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.15rem;
+
+    transition: color .4s;
+}
+
+.login__forgetPassword:hover {
+    color: white;
+}
+
+/* Footer */
+.footer__medias {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.footer__medias a {
+    /* margin-top: 40px; */
+    margin-right: 24px;
+}
